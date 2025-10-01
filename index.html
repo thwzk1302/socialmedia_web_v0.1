@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/login.css">
+    <title>Login Nova</title>
+  </head>
+  <body>
+    <header>
+        <h1>Hello to xyz!</h1>
+    </header>
+    <main id="LoginScreen">
+      <!--Login-->
+      <section>
+        <form action="./checklogin" id="login-form">
+          <label for="username">Email:</label>
+          <input type="text" id="username" placeholder="xyz@email.com" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" minlength="6" required>
+          <div class="button-row">
+            <button id="login-btn" type="submit">Login</button>
+            <button id="signup-btn" type="button">Sign Up</button>
+          </div>
+          </form>
+      </section>
+      <!--error-->
+      <section>
+        <p id="fail" class="fail-hidden">wrong username or password!</p>
+      </section>
+    </main>
+    <footer>
+        <h3>xyz</h3>
+    </footer>
+    <script src="./src/scripts/login.js"></script>
+  </body>
+</html>

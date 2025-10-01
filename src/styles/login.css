@@ -1,0 +1,14 @@
+h1{
+    font-size: 1.5rem;
+    color: rgb(8, 119, 119);
+    background-color: rgba(0, 255, 255, 0.979);
+    background-image:image('./background-nova.jpg');
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+body{
+    margin: 0%;
+}
+*{
+    box-sizing: border-box;
+}

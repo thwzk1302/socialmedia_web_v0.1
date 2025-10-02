@@ -1,14 +1,21 @@
-h1{
-    font-size: 1.5rem;
-    color: rgb(8, 119, 119);
-    background-color: rgba(0, 255, 255, 0.979);
-    background-image:image('./background-nova.jpg');
-    margin-top: 0%;
-    margin-bottom: 0%;
+.login-header{
+    grid-area: header;
 }
-body{
-    margin: 0%;
+.login-main{
+    grid-area: main;
 }
-*{
-    box-sizing: border-box;
+.login-footer{
+    grid-area: footer;
+}
+.grid-container-login{
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer' ;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2%;
+    background-color:rgb(174, 226, 226);
+    padding: 2%;
 }

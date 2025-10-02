@@ -7,31 +7,40 @@
     <title>Login Nova</title>
   </head>
   <body>
-    <header>
-        <h1>Hello to xyz!</h1>
-    </header>
-    <main id="LoginScreen">
-      <!--Login-->
-      <section>
-        <form action="./checklogin" id="login-form">
-          <label for="username">Email:</label>
-          <input type="text" id="username" placeholder="xyz@email.com" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" minlength="6" required>
-          <div class="button-row">
-            <button id="login-btn" type="submit">Login</button>
-            <button id="signup-btn" type="button">Sign Up</button>
+    <div class="grid-container-login">
+      <header class="login-header">
+          <h1>Hello to xyz!</h1>
+      </header>
+      <main class="login-main">
+        <!--Login-->
+        <section>
+          <div>
+            <p>Login to XYZ</p>
           </div>
-          </form>
-      </section>
-      <!--error-->
-      <section>
-        <p id="fail" class="fail-hidden">wrong username or password!</p>
-      </section>
-    </main>
-    <footer>
-        <h3>xyz</h3>
-    </footer>
-    <script src="./src/scripts/login.js"></script>
+          <form action="./checklogin">
+            <div>
+            <label for="username">Email:</label>
+            <input type="text" id="username" placeholder="xyz@email.com" required>
+            </div>
+            <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" minlength="6" required>
+            </div>
+            <div>
+              <button id="login-btn" type="submit">Login</button>
+              <button id="signup-btn" type="button">Sign Up</button>
+            </div>
+            </form>
+        </section>
+        <!--error-->
+        <section>
+          <p>wrong username or password!</p>
+        </section>
+      </main>
+      <footer class="login-footer">
+          <h3>xyz</h3>
+      </footer>
+    </div>
+      <script src="./src/scripts/login.js"></script>
   </body>
 </html>

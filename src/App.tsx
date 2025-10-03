@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import type { FormProps } from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 
-  return (
-    <>
-      <div>
-              <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+type FieldType = {
+  username?: string;
+  password?: string;
+  remember?: string;
+};
 
-export default App
+const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+  console.log('Success:', values);
+};
+
+const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+  console.log('Failed:', errorInfo);
+};
+
+const App: React.FC = () => (
+  <Form
+
+    initialValues={{ remember: true, username:'ngoc' }}
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed}
+  >
+    <Form.Item<FieldType>
+      label="Username"
+      name="username"
+      rules={[{ required: true, message: 'Please input your username!' },{max:6,  message: 'ko qua 6 ki tu'}]}
+    >
+      <Input />
+    </Form.Item>
+
+    <Form.Item<FieldType>
+      label="Password"
+      name="password"
+      rules={[{ required: true, message: 'Please input your password!' }]}
+    >
+      <Input.Password/>
+    </Form.Item>
+
+    <Form.Item<FieldType> name="remember" valuePropName="checked" label={null}>
+      <Checkbox>Remember me</Checkbox>
+    </Form.Item>
+
+    <Form.Item label={null}>
+      <Button type="console.count(label)" htmlType="submit">
+        Submit
+      </Button>
+    </Form.Item>
+  </Form>
+);
+
+export default App;
